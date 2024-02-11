@@ -1,0 +1,39 @@
+[submodule "pack/coding/start/formatter.nvim"]
+	path = pack/coding/start/formatter.nvim
+	url = https://github.com/mhartington/formatter.nvim
+[submodule "pack/coding/start/nvim-lint"]
+	path = pack/coding/start/nvim-lint
+	url = https://github.com/mfussenegger/nvim-lint.git
+[submodule "pack/coding/start/vim-polyglot"]
+	path = pack/coding/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule "pack/lsp/start/cmp-luasnip"]
+	path = pack/lsp/start/cmp-luasnip
+	url = https://github.com/saadparwaiz1/cmp_luasnip
+[submodule "pack/lsp/start/cmp-nvim-lsp"]
+	path = pack/lsp/start/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp
+[submodule "pack/lsp/start/lspconfig"]
+	path = pack/lsp/start/lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+[submodule "pack/lsp/start/luasnip"]
+	path = pack/lsp/start/luasnip
+	url = https://github.com/L3MON4D3/LuaSnip
+[submodule "pack/lsp/start/mason"]
+	path = pack/lsp/start/mason
+	url = https://github.com/williamboman/mason.nvim
+[submodule "pack/lsp/start/mason-lspconfig"]
+	path = pack/lsp/start/mason-lspconfig
+	url = https://github.com/williamboman/mason-lspconfig.nvim
+[submodule "pack/lsp/start/nvim-cmp"]
+	path = pack/lsp/start/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp
+[submodule "pack/shell/start/nerdtree"]
+	path = pack/shell/start/nerdtree
+	url = https://github.com/preservim/nerdtree
+[submodule "pack/shell/start/fzf"]
+	path = pack/shell/start/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "pack/shell/start/fzf-lua"]
+	path = pack/shell/start/fzf-lua
+	url = https://github.com/ibhagwan/fzf-lua
