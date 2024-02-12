@@ -8,22 +8,32 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
 
 local servers = {
-  "clangd",
-  "cmake",
-  "eslint",
-  "gopls",
-  "jdtls",
-  "svelte",
-  "tsserver",
-  "lua_ls",
-  "unocss",
-  "volar",
+  { "clangd" },
+  { "cmake" },
+  { "eslint" },
+  { "gopls" },
+  { "jdtls" },
+  { "intelephense", {
+    cmd = { "env", "HOME=/tmp", "intelephense", "--stdio" },
+  } },
+  { "svelte" },
+  { "tsserver" },
+  { "lua_ls" },
+  { "unocss" },
+  { "volar" },
 }
 
 for _, server in ipairs(servers) do
-  lspconfig[server].setup({
+  local server_name = server[1]
+  local server_config = {
     capabilities = capabilities,
-  })
+  }
+  if #server == 2 then
+    for k, v in pairs(server[2]) do
+      server_config[k] = v
+    end
+  end
+  lspconfig[server_name].setup(server_config)
 end
 
 lspconfig.lua_ls.setup({
