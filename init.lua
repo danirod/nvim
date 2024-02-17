@@ -2,6 +2,7 @@
 vim.cmd([[
   match ExtraWhitespace /\s\+$/
   highlight ExtraWhitespace ctermbg=1
+  highlight Whitespace ctermfg=236
   highlight Pmenu ctermbg=235 ctermfg=15
   highlight Pmenusel ctermbg=240 ctermfg=15
   highlight VertSplit cterm=NONE ctermbg=NONE ctermfg=7
@@ -23,6 +24,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 -- Most of the options are set by a global $HOME/.editorconfig.
 vim.opt.wrap = false
 vim.opt.showmatch = true
+vim.opt.list = true
 
 -- Keybindings
 vim.keymap.set("n", "<C-N>", "<cmd>bnext<cr>")
