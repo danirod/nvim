@@ -15,6 +15,7 @@ require("formatter").setup({
     svelte = { require("formatter.filetypes.svelte").prettier },
     typescript = { require("formatter.filetypes.javascript").prettier },
     vue = { require("formatter.filetypes.vue").prettier },
+    xml = { require("formatter.filetypes.xml").xmlformat }, -- xmlformatter
     ["*"] = { require("formatter.filetypes.any").remove_trailing_whitespace },
   },
 })

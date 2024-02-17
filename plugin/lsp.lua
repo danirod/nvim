@@ -18,6 +18,7 @@ local servers = {
   } },
   { "svelte" },
   { "tsserver" },
+  { "lemminx" },
   { "lua_ls" },
   { "unocss" },
   { "volar" },
@@ -80,6 +81,8 @@ end)
 
 -- Key mappings
 vim.keymap.set("n", "gp", vim.diagnostic.open_float)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
   callback = function(ev)
