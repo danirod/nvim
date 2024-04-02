@@ -8,6 +8,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
 
 local servers = {
+  { "blueprint_ls" },
   { "clangd" },
   { "cmake" },
   { "eslint" },
@@ -16,11 +17,13 @@ local servers = {
   { "intelephense", {
     cmd = { "env", "HOME=/tmp", "intelephense", "--stdio" },
   } },
+  { "rust_analyzer" },
   { "svelte" },
   { "tsserver" },
   { "lemminx" },
   { "lua_ls" },
   { "unocss" },
+  { "vala_ls" },
   { "volar" },
 }
 

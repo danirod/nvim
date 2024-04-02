@@ -4,9 +4,6 @@
 [submodule "pack/coding/start/nvim-lint"]
 	path = pack/coding/start/nvim-lint
 	url = https://github.com/mfussenegger/nvim-lint.git
-[submodule "pack/coding/start/vim-polyglot"]
-	path = pack/coding/start/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot
 [submodule "pack/lsp/start/cmp-luasnip"]
 	path = pack/lsp/start/cmp-luasnip
 	url = https://github.com/saadparwaiz1/cmp_luasnip
@@ -40,3 +37,6 @@
 [submodule "pack/lsp/start/lsp-inlayhints"]
 	path = pack/lsp/start/lsp-inlayhints
 	url = https://github.com/lvimuser/lsp-inlayhints.nvim
+[submodule "pack/coding/start/nvim-treesitter"]
+	path = pack/coding/start/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
