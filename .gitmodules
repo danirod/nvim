@@ -37,3 +37,6 @@
 [submodule "pack/shell/start/fzf-lua"]
 	path = pack/shell/start/fzf-lua
 	url = https://github.com/ibhagwan/fzf-lua
+[submodule "pack/lsp/start/lsp-inlayhints"]
+	path = pack/lsp/start/lsp-inlayhints
+	url = https://github.com/lvimuser/lsp-inlayhints.nvim
