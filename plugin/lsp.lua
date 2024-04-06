@@ -161,3 +161,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.cmd([[highlight LspInlayHint ctermfg=238 guifg=238]])
   end,
 })
+
+require("fidget").setup({})

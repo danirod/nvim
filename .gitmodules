@@ -40,3 +40,6 @@
 [submodule "pack/coding/start/nvim-treesitter"]
 	path = pack/coding/start/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "pack/lsp/start/fidget"]
+	path = pack/lsp/start/fidget
+	url = https://github.com/j-hui/fidget.nvim
