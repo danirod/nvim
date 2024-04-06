@@ -8,6 +8,7 @@ require("formatter").setup({
     h = { require("formatter.filetypes.c").clangformat },
     java = { require("formatter.filetypes.c").clangformat },
     javascript = { require("formatter.filetypes.javascript").prettier },
+    json = { require("formatter.filetypes.json").prettier },
     lua = { require("formatter.filetypes.lua").stylua },
     python = { require("formatter.filetypes.python").black },
     ruby = { require("formatter.filetypes.ruby").rubocop },

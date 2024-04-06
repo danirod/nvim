@@ -1,0 +1,53 @@
+{
+  "glib_property": {
+    "prefix": "glib_prop",
+    "description": "Define a GLib property",
+    "body": "#[property(get, set)]"
+  },
+  "glib_template": {
+    "prefix": "glib_templ",
+    "description": "Add the annotation to load a template from a GResource",
+    "body": "#[template(resource = \"${1:path}\")]"
+  },
+  "glib_templates": {
+    "prefix": "glib_inittemp",
+    "description": "Add the functions required to init templates",
+    "body": [
+      "fn class_init(klass: &mut Self::Class) {",
+      "    klass.bind_template();",
+      "}",
+      "",
+      "fn instance_init(obj: &InitializingObject<Self>) {",
+      "    obj.init_template();",
+      "}"
+    ]
+  },
+  "glib_class": {
+    "prefix": "glib_class",
+    "description": "Define a proper class with GLib",
+    "body": [
+      "use gtk4::glib;",
+      "",
+      "mod imp {",
+      "    use glib::subclass::InitializingObject;",
+      "    use gtk4::glib;",
+      "    use gtk4::glib::subclass::prelude::*;",
+      "",
+      "    #[derive(Default)]",
+      "    pub struct ${1:class} {}",
+      "",
+      "    #[glib::object_subclass]",
+      "    impl ObjectSubclass for $1 {",
+      "        const NAME: &'static str = \"${2:static_name}\";",
+      "        type Type = super::$1;",
+      "    }",
+      "",
+      "    impl ObjectImpl for $1 {}",
+      "}",
+      "",
+      "glib::wrapper! {",
+      "    pub struct $1(ObjectSubclass<imp::$1>);",
+      "}"
+    ]
+  }
+}

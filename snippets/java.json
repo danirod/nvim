@@ -1,0 +1,7 @@
+{
+  "Main class": {
+    "prefix": "main",
+    "body": ["public static void main(String[] args) {\n    // Code\n}"],
+    "description": "Main method"
+  }
+}
