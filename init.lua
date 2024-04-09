@@ -19,6 +19,9 @@ vim.opt.wrap = false
 vim.opt.showmatch = true
 vim.opt.list = true
 
+vim.opt.signcolumn = "yes"
+vim.opt.number = true
+
 -- Keybindings
 vim.keymap.set("n", "<C-N>", "<cmd>bnext<cr>")
 vim.keymap.set("n", "<C-P>", "<cmd>bprev<cr>")

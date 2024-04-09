@@ -11,3 +11,4 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '^\.DS_Store$', '^node_modules$', '.git$', 
 " autocmd VimEnter * NERDTree | wincmd p
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd FileType nerdtree setlocal signcolumn=no

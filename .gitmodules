@@ -52,3 +52,6 @@
 [submodule "pack/theme/start/vscode"]
 	path = pack/theme/start/vscode
 	url = https://github.com/Mofiqul/vscode.nvim
+[submodule "pack/shell/start/gitsigns"]
+	path = pack/shell/start/gitsigns
+	url = https://github.com/lewis6991/gitsigns.nvim
