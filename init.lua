@@ -4,12 +4,6 @@ local function reload_theme()
     match ExtraWhitespace /\s\+$/
     highlight ExtraWhitespace ctermbg=1
     highlight Whitespace ctermfg=236
-    highlight Pmenu ctermbg=235 ctermfg=15
-    highlight Pmenusel ctermbg=240 ctermfg=15
-    highlight VertSplit cterm=NONE ctermbg=NONE ctermfg=7
-    highlight StatusLine cterm=NONE ctermfg=yellow ctermbg=darkblue
-    highlight StatusLineNC cterm=NONE ctermfg=yellow ctermbg=darkblue
-    highlight LspInlayHint ctermfg=238 guifg=238
   ]])
 end
 

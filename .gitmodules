@@ -43,3 +43,12 @@
 [submodule "pack/lsp/start/fidget"]
 	path = pack/lsp/start/fidget
 	url = https://github.com/j-hui/fidget.nvim
+[submodule "pack/shell/start/zen-mode"]
+	path = pack/shell/start/zen-mode
+	url = https://github.com/folke/zen-mode.nvim
+[submodule "pack/shell/start/twilight"]
+	path = pack/shell/start/twilight
+	url = https://github.com/folke/twilight.nvim
+[submodule "pack/theme/start/vscode"]
+	path = pack/theme/start/vscode
+	url = https://github.com/Mofiqul/vscode.nvim
