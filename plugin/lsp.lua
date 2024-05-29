@@ -12,11 +12,13 @@ local servers = {
   { "clangd" },
   { "cmake" },
   { "eslint" },
+  { "elixirls" },
   { "gopls" },
   { "jdtls" },
   { "intelephense", {
     cmd = { "env", "HOME=/tmp", "intelephense", "--stdio" },
   } },
+  { "pylsp" },
   { "rust_analyzer" },
   { "svelte" },
   { "tsserver" },
@@ -95,6 +97,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "gt", vim.lsp.buf.declaration, opts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+    vim.keymap.set("n", "gt", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
   end,

@@ -2,11 +2,11 @@ local twilight = require("twilight")
 
 twilight.setup({
   dimming = {
-    alpha = 0.05,
+    alpha = 0.5,
     color = { "Normal", "#ffffff" },
     inactive = true,
   },
-  context = 20,
+  context = 10,
   exclude = {},
 })
 

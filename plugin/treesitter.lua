@@ -1,5 +1,5 @@
 require("nvim-treesitter.configs").setup({
-  ensure_installed = { "c", "lua", "blueprint", "rust" },
+  ensure_installed = { "c", "lua", "blueprint", "rust", "elixir" },
   ignore_install = {},
   sync_install = false,
   auto_install = false,

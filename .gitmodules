@@ -55,3 +55,18 @@
 [submodule "pack/shell/start/gitsigns"]
 	path = pack/shell/start/gitsigns
 	url = https://github.com/lewis6991/gitsigns.nvim
+[submodule "pack/shell/start/neogit"]
+	path = pack/shell/start/neogit
+	url = https://github.com/NeogitOrg/neogit
+[submodule "pack/shell/start/plenary"]
+	path = pack/shell/start/plenary
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "pack/dap/start/nvim-dap"]
+	path = pack/dap/start/nvim-dap
+	url = https://github.com/mfussenegger/nvim-dap.git
+[submodule "pack/dap/start/nvim-neotest"]
+	path = pack/dap/start/nvim-neotest
+	url = https://github.com/nvim-neotest/nvim-nio
+[submodule "pack/dap/start/nvim-dap-ui"]
+	path = pack/dap/start/nvim-dap-ui
+	url = https://github.com/rcarriga/nvim-dap-ui
