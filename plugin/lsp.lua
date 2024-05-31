@@ -14,7 +14,7 @@ local servers = {
   { "eslint" },
   { "elixirls" },
   { "gopls" },
-  { "jdtls" },
+  -- { "jdtls" },
   { "intelephense", {
     cmd = { "env", "HOME=/tmp", "intelephense", "--stdio" },
   } },
