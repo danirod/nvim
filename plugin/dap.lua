@@ -166,5 +166,17 @@ dap.listeners.before.event_exited.dapui_config = function()
   dapui.close()
 end
 
+vim.keymap.set("n", "<Leader>du", dapui.toggle)
 vim.keymap.set("n", "<Leader>db", dap.toggle_breakpoint)
+vim.keymap.set("n", "<Leader>dc", function()
+  local condition = vim.fn.input("Condition: ")
+  dap.toggle_breakpoint(condition)
+end)
+
+-- after thought, using leader chords for these keys would be
+-- extremely unhelpful when doing things like step-step-step-next-step
+-- so just use function keys for this
 vim.keymap.set("n", "<f5>", dap.continue)
+vim.keymap.set("n", "<f10>", dap.step_over)
+vim.keymap.set("n", "<f11>", dap.step_into)
+vim.keymap.set("n", "<f12>", dap.step_out)
