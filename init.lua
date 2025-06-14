@@ -21,6 +21,7 @@ vim.opt.list = true
 
 vim.opt.signcolumn = "yes"
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- Keybindings
 vim.keymap.set("n", "<C-N>", "<cmd>bnext<cr>")

@@ -34,9 +34,6 @@
 [submodule "pack/shell/start/fzf-lua"]
 	path = pack/shell/start/fzf-lua
 	url = https://github.com/ibhagwan/fzf-lua
-[submodule "pack/lsp/start/lsp-inlayhints"]
-	path = pack/lsp/start/lsp-inlayhints
-	url = https://github.com/lvimuser/lsp-inlayhints.nvim
 [submodule "pack/coding/start/nvim-treesitter"]
 	path = pack/coding/start/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
@@ -73,3 +70,6 @@
 [submodule "pack/lsp/start/nvim-jdtls"]
 	path = pack/lsp/start/nvim-jdtls
 	url = https://github.com/mfussenegger/nvim-jdtls
+[submodule "pack/shell/start/marks"]
+	path = pack/shell/start/marks
+	url = https://github.com/chentoast/marks.nvim

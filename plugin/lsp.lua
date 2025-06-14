@@ -21,7 +21,7 @@ local servers = {
   { "pylsp" },
   { "rust_analyzer" },
   { "svelte" },
-  { "tsserver" },
+  { "ts_ls" },
   { "lemminx" },
   { "lua_ls" },
   { "unocss" },
@@ -86,20 +86,26 @@ end)
 
 -- Key mappings
 vim.keymap.set("n", "gp", vim.diagnostic.open_float)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
   callback = function(ev)
     vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
     local opts = { buffer = ev.buf }
 
+    -- local key mappings
     vim.keymap.set("n", "gt", vim.lsp.buf.declaration, opts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
     vim.keymap.set("n", "gt", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+
+    -- inlay hints
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client.server_capabilities.inlayHintProvider then
+      vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
+    end
   end,
 })
 
@@ -131,20 +137,15 @@ cmp.setup({
   },
 })
 
--- Inline hints without having to install nvim-dev
-require("lsp-inlayhints").setup()
-vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = "LspAttach_inlayhints",
-  callback = function(args)
-    if not (args.data and args.data.client_id) then
+-- https://github.com/neovim/neovim/issues/30985
+for _, method in ipairs({ "textDocument/diagnostic", "workspace/diagnostic" }) do
+  local default_diagnostic_handler = vim.lsp.handlers[method]
+  vim.lsp.handlers[method] = function(err, result, context, config)
+    if err ~= nil and err.code == -32802 then
       return
     end
-
-    local bufnr = args.buf
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    require("lsp-inlayhints").on_attach(client, bufnr)
-  end,
-})
+    return default_diagnostic_handler(err, result, context, config)
+  end
+end
 
 require("fidget").setup({})
