@@ -148,4 +148,11 @@ for _, method in ipairs({ "textDocument/diagnostic", "workspace/diagnostic" }) d
   end
 end
 
-require("fidget").setup({})
+require("fidget").setup({
+  notification = {
+    window = {
+      winblend = 0,
+      border = "rounded",
+    },
+  },
+})

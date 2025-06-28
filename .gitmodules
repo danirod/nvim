@@ -73,3 +73,6 @@
 [submodule "pack/shell/start/marks"]
 	path = pack/shell/start/marks
 	url = https://github.com/chentoast/marks.nvim
+[submodule "onedarkpro"]
+	path = pack/theme/start/onedark
+	url = https://github.com/olimorris/onedarkpro.nvim

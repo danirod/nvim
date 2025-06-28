@@ -1,6 +1,7 @@
 local fzf = require("fzf-lua")
 
 fzf.setup({ "fzf-native" })
+fzf.register_ui_select()
 
 vim.keymap.set("n", "<Leader>,", fzf.files)
 vim.keymap.set("n", "<Leader>;", fzf.buffers)
