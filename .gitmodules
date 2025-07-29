@@ -46,9 +46,6 @@
 [submodule "pack/shell/start/twilight"]
 	path = pack/shell/start/twilight
 	url = https://github.com/folke/twilight.nvim
-[submodule "pack/theme/start/vscode"]
-	path = pack/theme/start/vscode
-	url = https://github.com/Mofiqul/vscode.nvim
 [submodule "pack/shell/start/gitsigns"]
 	path = pack/shell/start/gitsigns
 	url = https://github.com/lewis6991/gitsigns.nvim
@@ -73,6 +70,3 @@
 [submodule "pack/shell/start/marks"]
 	path = pack/shell/start/marks
 	url = https://github.com/chentoast/marks.nvim
-[submodule "onedarkpro"]
-	path = pack/theme/start/onedark
-	url = https://github.com/olimorris/onedarkpro.nvim
