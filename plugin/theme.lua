@@ -1,10 +1,10 @@
 -- vim.o.background = "dark"
-require("onedarkpro").setup({
-  options = {
-    transparency = true,
-  },
-})
-require("onedarkpro").load()
+-- require("onedarkpro").setup({
+--   options = {
+--     transparency = true,
+--   },
+-- })
+-- require("onedarkpro").load()
 
 -- local c = require("vscode.colors").get_colors()
 -- require("vscode").setup({
@@ -18,4 +18,6 @@ require("onedarkpro").load()
 -- })
 -- require("vscode").load()
 
+vim.cmd("hi Normal guibg=NONE")
 vim.cmd("hi ModeMsg guibg=NONE")
+vim.cmd("hi Whitespace ctermfg=blue guifg=NvimDarkGrey4")
