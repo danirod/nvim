@@ -23,7 +23,30 @@ local servers = {
   { "svelte" },
   { "ts_ls" },
   { "lemminx" },
-  { "lua_ls" },
+  {
+    "lua_ls",
+    {
+      settings = {
+        Lua = {
+          completion = {
+            callSnippet = "Replace",
+          },
+          runtime = {
+            version = "LuaJIT",
+          },
+          diagnostics = {
+            globals = { "vim" },
+          },
+          workspace = {
+            library = vim.api.nvim_get_runtime_file("", true),
+          },
+          telemetry = {
+            enable = false,
+          },
+        },
+      },
+    },
+  },
   { "unocss" },
   { "vala_ls" },
   { "volar" },
@@ -41,28 +64,6 @@ for _, server in ipairs(servers) do
   end
   lspconfig[server_name].setup(server_config)
 end
-
-lspconfig.lua_ls.setup({
-  settings = {
-    Lua = {
-      completion = {
-        callSnippet = "Replace",
-      },
-      runtime = {
-        version = "LuaJIT",
-      },
-      diagnostics = {
-        globals = { "vim", "require" },
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
-})
 
 -- Disable semantic highlight
 local disable_semantic_highlight = function()

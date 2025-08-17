@@ -1,3 +1,5 @@
+require("hotpot")
+
 -- "Theme"
 local function reload_theme()
   vim.cmd([[
@@ -34,12 +36,12 @@ vim.g.mapleader = ","
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "gitcommit" },
   callback = function()
-    vim.opt_local.colorcolumn = {50, 72}
+    vim.opt_local.colorcolumn = { 50, 72 }
   end,
 })
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "changelog" },
   callback = function()
-    vim.opt_local.colorcolumn = {72}
+    vim.opt_local.colorcolumn = { 72 }
   end,
 })

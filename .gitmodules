@@ -79,3 +79,9 @@
 [submodule "pack/rust/start/cargo"]
 	path = pack/rust/start/cargo
 	url = https://github.com/nwiizo/cargo.nvim
+[submodule "pack/fennel/start/hotpot"]
+	path = pack/fennel/start/hotpot
+	url = https://github.com/rktjmp/hotpot.nvim
+[submodule "pack/shell/start/which-key"]
+	path = pack/shell/start/which-key
+	url = https://github.com/folke/which-key.nvim
