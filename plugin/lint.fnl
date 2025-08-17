@@ -1,4 +1,5 @@
-(let [lint (require :lint)]
+(let [lint (require :lint)
+      try_lint (fn [] (lint.try_lint))]
   (set lint.linters.clangtidy.args [:--extra-arg=-Wall :--quiet]) ; So that clang languages show errors like unused variables and such.
   (set lint.linters.by_ft {:c [:clangtidy]
                            :cpp [:clangtidy]
@@ -11,4 +12,4 @@
                                 :BufReadPost
                                 :InsertLeave
                                 :BufWritePost]
-                               {:callback lint.try_lint}))
+                               {:callback try_lint}))
