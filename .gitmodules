@@ -73,3 +73,6 @@
 [submodule "pack/shell/start/nui"]
 	path = pack/shell/start/nui
 	url = https://github.com/MunifTanjim/nui.nvim
+[submodule "pack/shell/start/bufferline"]
+	path = pack/shell/start/bufferline
+	url = https://github.com/akinsho/bufferline.nvim
