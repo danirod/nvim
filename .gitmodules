@@ -76,3 +76,6 @@
 [submodule "pack/shell/start/bufferline"]
 	path = pack/shell/start/bufferline
 	url = https://github.com/akinsho/bufferline.nvim
+[submodule "pack/rust/start/cargo"]
+	path = pack/rust/start/cargo
+	url = https://github.com/nwiizo/cargo.nvim
