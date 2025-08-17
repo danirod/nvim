@@ -28,3 +28,18 @@ vim.keymap.set("n", "<C-N>", "<cmd>bnext<cr>")
 vim.keymap.set("n", "<C-P>", "<cmd>bprev<cr>")
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 vim.g.mapleader = ","
+
+-- Some rulers
+-- https://github.com/barreiroleo/nvim-config/blob/cb9532653540a32a4a2fdab53b85749f2bfda19a/after/plugin/autocmds.lua#L46-L52
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "gitcommit" },
+  callback = function()
+    vim.opt_local.colorcolumn = {50, 72}
+  end,
+})
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "changelog" },
+  callback = function()
+    vim.opt_local.colorcolumn = {72}
+  end,
+})
