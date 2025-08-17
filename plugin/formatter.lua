@@ -2,13 +2,14 @@
 require("formatter").setup({
   logging = true,
   filetype = {
+    blueprint = { require("formatter.filetypes.blueprint").blueprint_compiler },
     c = { require("formatter.filetypes.c").clangformat },
     cpp = { require("formatter.filetypes.c").clangformat },
     go = { require("formatter.filetypes.go").gofmt, require("formatter.filetypes.go").goimports },
     h = { require("formatter.filetypes.c").clangformat },
     java = { require("formatter.filetypes.c").clangformat },
     javascript = { require("formatter.filetypes.javascript").prettier },
-    json = { require("formatter.filetypes.json").prettier },
+    json = { require("formatter.filetypes.json").jq, require("formatter.filetypes.json").prettier },
     lua = { require("formatter.filetypes.lua").stylua },
     python = { require("formatter.filetypes.python").black },
     ruby = { require("formatter.filetypes.ruby").rubocop },

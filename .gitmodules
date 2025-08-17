@@ -1,6 +1,6 @@
 [submodule "pack/coding/start/formatter.nvim"]
 	path = pack/coding/start/formatter.nvim
-	url = https://github.com/mhartington/formatter.nvim
+	url = https://github.com/danirod/formatter.nvim
 [submodule "pack/coding/start/nvim-lint"]
 	path = pack/coding/start/nvim-lint
 	url = https://github.com/mfussenegger/nvim-lint.git
