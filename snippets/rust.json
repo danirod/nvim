@@ -2,15 +2,18 @@
   "glib_property": {
     "prefix": "glib_prop",
     "description": "Define a GLib property",
-    "body": "#[property(get, set)]"
+    "body": [
+      "#[property(get, set$3)]",
+      "$1: RefCell<$2>"
+    ]
   },
-  "glib_template": {
-    "prefix": "glib_templ",
+  "gtk_template": {
+    "prefix": "gtk_template",
     "description": "Add the annotation to load a template from a GResource",
     "body": "#[template(resource = \"${1:path}\")]"
   },
-  "glib_templates": {
-    "prefix": "glib_inittemp",
+  "gtk_init_template": {
+    "prefix": "gtk_init_template",
     "description": "Add the functions required to init templates",
     "body": [
       "fn class_init(klass: &mut Self::Class) {",
@@ -26,14 +29,16 @@
     "prefix": "glib_class",
     "description": "Define a proper class with GLib",
     "body": [
-      "use gtk4::glib;",
+      "use glib::prelude::*;",
+      "use glib::subclass::prelude::*;",
       "",
       "mod imp {",
+      "    use super::*;",
       "    use glib::subclass::InitializingObject;",
-      "    use gtk4::glib;",
-      "    use gtk4::glib::subclass::prelude::*;",
+      "    use glib::Properties;",
       "",
-      "    #[derive(Default)]",
+      "    #[derive(Default, Properties)]",
+      "    #[properties(wrapper_type = super::$1)]",
       "    pub struct ${1:class} {}",
       "",
       "    #[glib::object_subclass]",
@@ -42,12 +47,37 @@
       "        type Type = super::$1;",
       "    }",
       "",
+      "    #[glib::derived_properties]",
       "    impl ObjectImpl for $1 {}",
       "}",
       "",
       "glib::wrapper! {",
       "    pub struct $1(ObjectSubclass<imp::$1>);",
       "}"
+    ]
+  },
+  "gpl3": {
+    "prefix": "gpl-3-spdx",
+    "description": "Insert the header of a GPL-3.0-or-later file",
+    "body": [
+      "// Copyright ${1:author}",
+      "//",
+      "// This program is free software: you can redistribute it and/or modify",
+      "// it under the terms of the GNU General Public License as published by",
+      "// the Free Software Foundation, either version 3 of the License, or",
+      "// (at your option) any later version.",
+      "//",
+      "// This program is distributed in the hope that it will be useful,",
+      "// but WITHOUT ANY WARRANTY; without even the implied warranty of",
+      "// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+      "// GNU General Public License for more details.",
+      "//",
+      "// You should have received a copy of the GNU General Public License",
+      "// along with this program.  If not, see <https://www.gnu.org/licenses/>.",
+      "//",
+      "// SPDX-License-Identifier: GPL-3.0-or-later",
+      "",
+      ""
     ]
   }
 }

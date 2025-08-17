@@ -4,6 +4,12 @@
     "snippets": [
       {
         "language": [
+          "blueprint"
+        ],
+        "path": "./blueprint.json"
+      },
+      {
+        "language": [
           "rust"
         ],
         "path": "./rust.json"
