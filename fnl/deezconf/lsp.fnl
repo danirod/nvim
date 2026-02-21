@@ -10,29 +10,6 @@
             "https://github.com/j-hui/fidget.nvim"
             "https://github.com/neovim/nvim-lspconfig")
 
-;; Mason can take care of installing and enabling some servers.
-(let [mason (require :mason)
-      mason-lspconfig (require :mason-lspconfig)
-      mason-servers [:clangd
-                     :cmake
-                     :eslint
-                     :elixirls
-                     :gopls
-                     :intelephense
-                     :pylsp
-                     :rust_analyzer
-                     :svelte
-                     :ts_ls
-                     :tailwindcss
-                     :unocss
-                     :astro
-                     :ruby_lsp
-                     :lua_ls
-                     :lemminx]]
-  (mason.setup)
-  (mason-lspconfig.setup {:ensure_installed mason-servers
-                          :automatic_enable mason-servers}))
-
 ;; LSP server configurations
 (vim.lsp.config :intelephense {:cmd [:env :HOME=/tmp :intelephense :--stdio]})
 (vim.lsp.config :lua_ls
