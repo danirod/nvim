@@ -1,0 +1,19 @@
+(require :deezconf.theme)
+(require :deezconf.animations)
+(require :deezconf.opts)
+
+;; this must come early because other plugins will hook here for keybindings
+(require :deezconf.whichkey)
+
+(require :deezconf.ai)
+(require :deezconf.bufferline)
+(require :deezconf.buffers)
+(require :deezconf.format)
+(require :deezconf.fzf)
+(require :deezconf.git)
+(require :deezconf.luasnip)
+(require :deezconf.lsp)
+(require :deezconf.marks)
+(require :deezconf.neotree)
+(require :deezconf.treesitter)
+(require :deezconf.zen)
