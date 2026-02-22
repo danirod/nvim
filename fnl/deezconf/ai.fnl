@@ -2,7 +2,8 @@
 
 ; TODO: just install and use opencode
 
-(uses-pack! "https://github.com/carlos-algms/agentic.nvim")
+(uses-pack! "https://github.com/carlos-algms/agentic.nvim"
+            "https://github.com/github/copilot.vim")
 
 (let [agentic (require :agentic)
       wk (require :which-key)]
