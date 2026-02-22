@@ -41,11 +41,11 @@
       "src": "https://github.com/mhartington/formatter.nvim"
     },
     "fzf": {
-      "rev": "880dd20b18852fc6978942664b98c015123f2881",
+      "rev": "4d6a7757b87dd1cf93405c35dce21af610363d05",
       "src": "https://github.com/junegunn/fzf"
     },
     "fzf-lua": {
-      "rev": "d2fa4fcebe47c49f0393363c7bb2968ba5516cef",
+      "rev": "9004cbb4c065a32b690e909c49903967b45301eb",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
@@ -109,7 +109,7 @@
       "src": "https://github.com/mfussenegger/nvim-lint.git"
     },
     "nvim-lspconfig": {
-      "rev": "66fd02ad1c7ea31616d3ca678fa04e6d0b360824",
+      "rev": "5a855bcfec7973767a1a472335684bbd71d2fa2b",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -117,7 +117,7 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-treesitter": {
-      "rev": "45a07f869b0cffba342276f2c77ba7c116d35db8",
+      "rev": "dc42c209f3820bdfaae0956f15de29689aa6b451",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-web-devicons": {
