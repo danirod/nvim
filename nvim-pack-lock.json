@@ -32,6 +32,10 @@
       "rev": "a12fd5672110c8aa7e3c8419e28c96943ca179be",
       "src": "https://github.com/github/copilot.vim"
     },
+    "diagflow.nvim": {
+      "rev": "b13321b517ff64bf42eeac2214085d3c76d83a0d",
+      "src": "https://github.com/dgagn/diagflow.nvim"
+    },
     "fidget.nvim": {
       "rev": "7fa433a83118a70fe24c1ce88d5f0bd3453c0970",
       "src": "https://github.com/j-hui/fidget.nvim"

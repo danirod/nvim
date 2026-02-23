@@ -8,7 +8,8 @@
             "https://github.com/hrsh7th/nvim-cmp"
             "https://github.com/saadparwaiz1/cmp_luasnip"
             "https://github.com/j-hui/fidget.nvim"
-            "https://github.com/neovim/nvim-lspconfig")
+            "https://github.com/neovim/nvim-lspconfig"
+            "https://github.com/dgagn/diagflow.nvim")
 
 ;; LSP server configurations
 (vim.lsp.config :intelephense {:cmd [:env :HOME=/tmp :intelephense :--stdio]})
@@ -21,10 +22,13 @@
                                   :diagnostics {:globals [:vim]}}}})
 
 (vim.lsp.enable :blueprint_ls)
+(vim.lsp.enable :rust_analyzer)
 (vim.lsp.enable :vala_ls)
 
 ;; TODO: configure keybindings. K for the hover docs.
 ;; TODO: assert completion is working.
+(let [diagflow (require :diagflow)]
+  (diagflow.setup {:enable true :placement :inline}))
 
 (fn lsp-attach-callback [args]
   (let [client-id args.data.client_id
