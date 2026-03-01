@@ -140,6 +140,10 @@
       "rev": "c85bdbb25db096fbcf616bc4e1357bd61fe2c199",
       "src": "https://github.com/sphamba/smear-cursor.nvim"
     },
+    "toggleterm.nvim": {
+      "rev": "9a88eae817ef395952e08650b3283726786fb5fb",
+      "src": "https://github.com/akinsho/toggleterm.nvim"
+    },
     "ts-install.nvim": {
       "rev": "2284eb78d77cb2e7d62193b2666c93669557738f",
       "src": "https://github.com/lewis6991/ts-install.nvim"
