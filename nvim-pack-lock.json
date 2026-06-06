@@ -76,6 +76,10 @@
       "rev": "efc85e42262cd0c9e1fdbf806c25cb0be6de115c",
       "src": "https://github.com/nvim-mini/mini.icons"
     },
+    "minuet-ai.nvim": {
+      "rev": "449cf6ac16fbc5529f834c10e5fc1be7c75c3ffb",
+      "src": "https://github.com/milanglacier/minuet-ai.nvim"
+    },
     "neo-tree.nvim": {
       "rev": "2d04b7a422c9f84788bbb4e5ca2634c81dd0f5a3",
       "src": "https://github.com/nvim-neo-tree/neo-tree.nvim"
@@ -131,6 +135,10 @@
     "onedark.nvim": {
       "rev": "213c23ae45a04797572242568d5d51937181792d",
       "src": "https://github.com/navarasu/onedark.nvim"
+    },
+    "opencode.nvim": {
+      "rev": "c5043f810714ca44ca29d3d0d7cfe841447d09cf",
+      "src": "https://github.com/nickjvandyke/opencode.nvim"
     },
     "plenary.nvim": {
       "rev": "b9fd5226c2f76c951fc8ed5923d85e4de065e509",

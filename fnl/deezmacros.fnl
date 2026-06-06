@@ -29,4 +29,7 @@
         (tset spec k v)))
     spec))
 
-{: on-filetype! : uses-pack! : wk-spec! : on-pack-changed!}
+(fn api-key! [key]
+  `(vim.trim (vim.fn.system (.. "pass " ,key))))
+
+{: on-filetype! : uses-pack! : wk-spec! : on-pack-changed! : api-key!}
