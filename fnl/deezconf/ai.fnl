@@ -4,8 +4,19 @@
             "https://github.com/nickjvandyke/opencode.nvim")
 
 ; Minuet and Deepseek AI is something like Copilot or Cursor Tab.
+; TODO: Add a RAG to enhance the suggestions.
 (let [minuet (require :minuet)
       wk (require :which-key)
+      tab-languages [:bash
+                     :c
+                     :fennel
+                     :javascript
+                     :javascriptreact
+                     :lua
+                     :ruby
+                     :toml
+                     :typescript
+                     :typescriptreact]
       deepseek-api-key (api-key! :tokens/deepseek/minuet)
       deepseek-options {:name :deepseek
                         :model :deepseek-v4-flash
@@ -24,12 +35,7 @@
   (minuet.setup {:provider :openai_fim_compatible
                  :notify :debug
                  :request_timeout 4
-                 :virtualtext {:auto_trigger_ft [:ruby
-                                                 :javascript
-                                                 :typescript
-                                                 :c
-                                                 :lua
-                                                 :fennel]
+                 :virtualtext {:auto_trigger_ft tab-languages
                                :keymap {:accept :<Tab>
                                         :prev "<A-[>"
                                         :next "<A-]>"
