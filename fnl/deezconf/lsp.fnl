@@ -1,4 +1,4 @@
-;; LSP and completion. I might merge this and format.fnl into coding.fnll
+;; LSP and completion. I might merge this and format.fnl into coding.fnl
 
 (import-macros {: uses-pack! : wk-spec!} :deezmacros)
 
@@ -10,6 +10,11 @@
             "https://github.com/j-hui/fidget.nvim"
             "https://github.com/neovim/nvim-lspconfig"
             "https://github.com/dgagn/diagflow.nvim")
+
+;; TODO: Since both format.fnl and lsp.fnl this also should be part of coding.fnl.
+;; (Maybe LSPs have to be installed outside of Neovim since Opencode could use them too.)
+(let [mason (require :mason)]
+  (mason.setup))
 
 ;; LSP server configurations
 (vim.lsp.config :intelephense {:cmd [:env :HOME=/tmp :intelephense :--stdio]})
@@ -24,6 +29,9 @@
 (vim.lsp.enable :blueprint_ls)
 (vim.lsp.enable :rust_analyzer)
 (vim.lsp.enable :vala_ls)
+(vim.lsp.enable :rubocop)
+(vim.lsp.enable :ruby_lsp)
+(vim.lsp.enable :ts_ls)
 
 ;; TODO: configure keybindings. K for the hover docs.
 ;; TODO: assert completion is working.
