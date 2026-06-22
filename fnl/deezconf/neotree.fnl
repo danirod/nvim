@@ -7,10 +7,20 @@
 (let [neotree (require :neo-tree)
       wk (require :which-key)
       window {:width 35 :position :right :auto_resize true}
-      filtered_items {:hide_dotfiles false
-                      :hide_gitignore false
-                      :visible false}
-      options {: window :hijack_netrw_behavior :open_default : filtered_items}]
+      always_show [".gitignore"
+                   ".opencode"
+                   ".agents"
+                   ".config"
+                   ".github"]
+      always_show_by_pattern [".env*"]
+      filtered_items {:hide_dotfiles true
+                      :hide_gitignore true
+                      :visible false
+                      : always_show
+                      : always_show_by_pattern}
+      filesystem {:hijack_netrw_behavior :open_default
+      : filtered_items}
+      options {: window : filesystem}]
   (neotree.setup options)
   (wk.add (wk-spec! :<leader>nt ":Neotree reveal<cr>"))
   (wk.add (wk-spec! :<leader>nq ":Neotree close<cr>")))
