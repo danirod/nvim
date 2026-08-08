@@ -61,7 +61,7 @@
       "src": "https://github.com/nvim-mini/mini.icons"
     },
     "minuet-ai.nvim": {
-      "rev": "449cf6ac16fbc5529f834c10e5fc1be7c75c3ffb",
+      "rev": "479487c34041f53aad3184597428e42d9f3333b5",
       "src": "https://github.com/milanglacier/minuet-ai.nvim"
     },
     "neo-tree.nvim": {

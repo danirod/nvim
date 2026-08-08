@@ -3,38 +3,54 @@
 (uses-pack! "https://github.com/milanglacier/minuet-ai.nvim"
             "https://github.com/nickjvandyke/opencode.nvim")
 
-; Minuet and Deepseek AI is something like Copilot or Cursor Tab.
-; TODO: Add a RAG to enhance the suggestions.
+; Inline completions
 (let [minuet (require :minuet)
       wk (require :which-key)
       tab-languages [:bash
                      :c
+                     :cpp
                      :fennel
+                     :html
                      :javascript
                      :javascriptreact
+                     :meson
                      :lua
+                     :python
+                     :php
                      :ruby
+                     :rust
                      :toml
                      :typescript
                      :typescriptreact]
+      deepseek-endpoint "https://api.deepseek.com/chat/completions"
+      deepseek-model :deepseek-v4-flash
       deepseek-api-key (api-key! :tokens/deepseek/minuet)
       deepseek-options {:name :deepseek
-                        :model :deepseek-v4-flash
+                        :model deepseek-model
+                        :end_point deepseek-endpoint
                         :api_key (fn [] deepseek-api-key)
-                        :optional {:stop ["\n\n"]
-                                   :thinking {:type :disabled}
+                        :optional {:thinking {:type :disabled}
                                    :max_tokens 256
                                    :top_p 0.9}}
-      provider-options {:openai_fim_compatible deepseek-options}
-      duet-deepseek-options {:model :deepseek-v4-flash
-                             :end_point "https://api.deepseek.com/beta/completions"
+      provider-options {:openai_compatible deepseek-options}
+      duet-deepseek-options {:name :deepseek
+                             :model deepseek-model
+                             :end_point deepseek-endpoint
                              :api_key (fn [] deepseek-api-key)
                              :optional {:thinking {:type :disabled}}}
+      duet-skip-env (fn [bufnr]
+                      (let [buffer (vim.api.nvim_buf_get_name bufnr)
+                            filename (vim.fn.fnamemodify buffer :t)]
+                        (not (string.find filename :.env 1 true))))
       duet-options {:provider :openai_compatible
-                    :provider_options {:openai_compatible duet-deepseek-options}}]
-  (minuet.setup {:provider :openai_fim_compatible
+                    :provider_options {:openai_compatible duet-deepseek-options}
+                    :recent_edits {:enabled true
+                                   :enable_predicates [duet-skip-env]}}]
+  (minuet.setup {:provider :openai_compatible
                  :notify :debug
                  :request_timeout 4
+                 :throttle 1000
+                 :debounce 400
                  :virtualtext {:auto_trigger_ft tab-languages
                                :keymap {:accept :<Tab>
                                         :prev "<A-[>"
@@ -42,16 +58,14 @@
                                         :dismiss :<A-Esc>}}
                  :provider_options provider-options
                  :duet duet-options})
-  (wk.add [(wk-spec! :<A-d> "<cmd>Minuet duet predict"
+  (wk.add [(wk-spec! :<Leader>ap "<cmd>Minuet duet predict<cr>"
                      {:mode [:i :n] :silent true :desc "Predict duet"})
-           (wk-spec! :<A-a> "<cmd>Minuet duet apply"
+           (wk-spec! :<Leader>ac "<cmd>Minuet duet apply<cr>"
                      {:mode [:i :n] :silent true :desc "Apply duet"})
-           (wk-spec! :<A-x> "<cmd>Minuet duet dismiss"
+           (wk-spec! :<Leader>ax "<cmd>Minuet duet dismiss<cr>"
                      {:mode [:i :n] :silent true :desc "Dismiss duet"})]))
 
-; I come to the conclussion that it is better to just open opencode in a different tmux pane.
-; If you are all in in agentic programming you are not going to use Neovim anyway.
-; The bare minimum is to at least open Opencode inside Neovim in case I forget to use tmux.
+; Fallback. Use a tmux split for opencode, trust me bro.
 (let [opencode (require :opencode)
       wk (require :which-key)]
   (wk.add [(wk-spec! :<Leader>ao opencode.toggle

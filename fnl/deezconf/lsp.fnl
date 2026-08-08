@@ -27,11 +27,12 @@
                                   :diagnostics {:globals [:vim]}}}})
 
 (vim.lsp.enable :blueprint_ls)
-(vim.lsp.enable :rust_analyzer)
-(vim.lsp.enable :vala_ls)
+(vim.lsp.enable :clangd)
 (vim.lsp.enable :rubocop)
 (vim.lsp.enable :ruby_lsp)
+(vim.lsp.enable :rust_analyzer)
 (vim.lsp.enable :ts_ls)
+(vim.lsp.enable :vala_ls)
 
 ;; TODO: configure keybindings. K for the hover docs.
 ;; TODO: assert completion is working.
@@ -70,5 +71,4 @@
 
 ; Note: I am intentionally NOT disabling semantic formatting because maybe the thing has gone better
 ; in the last two years. I am still vigilant and this comment is mostly a recall for me to port
-
 ; that part of the snippet if it starts doing bad things.
