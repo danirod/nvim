@@ -8,6 +8,7 @@
 (require :deezconf.ai)
 (require :deezconf.bufferline)
 (require :deezconf.buffers)
+(require :deezconf.emmet)
 (require :deezconf.format)
 (require :deezconf.fzf)
 (require :deezconf.git)
