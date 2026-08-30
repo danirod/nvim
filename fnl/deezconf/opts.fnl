@@ -1,4 +1,5 @@
 (local options {:wrap false
+                :exrc true
                 :showmatch true
                 :list true
                 :signcolumn :yes
