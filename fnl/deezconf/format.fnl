@@ -19,7 +19,8 @@
                   :remove_trailing_whitespace)
       xmlformat (. (require :formatter.filetypes.xml) :xmlformat)]
   (formatter.setup {:logging true
-                    :filetype {:blueprint [blp]
+                    :filetype {:astro [prettier]
+                               :blueprint [blp]
                                :c [clangformat]
                                :cpp [clangformat]
                                :fennel [fnlfmt]

@@ -17,6 +17,9 @@
   (mason.setup))
 
 ;; LSP server configurations
+(let [stdpath (vim.fn.stdpath "data")
+      astro-tsdk (.. stdpath "/mason/packages/astro-language-server/node_modules/typescript/lib")]
+  (vim.lsp.config :astro {:init_options {:typescript {:tsdk astro-tsdk}}}))
 (vim.lsp.config :intelephense {:cmd [:env :HOME=/tmp :intelephense :--stdio]})
 (vim.lsp.config :lua_ls
                 {:settings {:Lua {:completion {:callSnippet :Replace}
@@ -25,8 +28,10 @@
                                                                                       true)}
                                   :telemetry {:enable false}
                                   :diagnostics {:globals [:vim]}}}})
-
+(vim.lsp.enable :astro)
 (vim.lsp.enable :blueprint_ls)
+(vim.lsp.enable :emmet_language_server)
+(vim.lsp.enable :fennel_language_server)
 (vim.lsp.enable :clangd)
 (vim.lsp.enable :rubocop)
 (vim.lsp.enable :ruby_lsp)
