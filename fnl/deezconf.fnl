@@ -16,6 +16,7 @@
 (require :deezconf.lsp)
 (require :deezconf.marks)
 (require :deezconf.neotree)
+(require :deezconf.quickfix)
 (require :deezconf.terminal)
 (require :deezconf.treesitter)
 (require :deezconf.zen)

@@ -31,6 +31,7 @@
                                :json [jq prettier]
                                :lua [stylua]
                                :typescript [prettier]
+                               :typescriptreact [prettier]
                                :python [black]
                                :ruby [rubocop]
                                :rust [rustfmt]
